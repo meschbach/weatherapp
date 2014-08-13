@@ -4,6 +4,6 @@
 	<link rel="stylesheet" type="type/css" href="<%= url("/style.css" )%>" >
 </head>
 
-<body>
+<body class='<%= @weather.nil? ? "" :  @weather.downcase %>'>
 <%= yield %>
 </body>

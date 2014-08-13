@@ -25,3 +25,7 @@ div {
 	font-size: 200%;
 	font-family: 'Cabin Sketch';
 }
+
+body.fair {
+	background-image: url("sunny.png");
+}
