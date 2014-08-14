@@ -37,18 +37,18 @@ post '/weather' do
 	puts "#{@weather}"
 	puts "****************************************"
 	
-	case @weather.downcase
-	when 'sunny'
+	case @weather
+	when 'Sunny'
 		erb :sunny
-	when 'cloudy'
+	when 'Cloudy'
 		erb :cloudy
-	when 'snowy'
+	when 'Snowy'
 		erb :snowy
-	when 'fair'
+	when 'Fair'
 		erb :fair
-	when 'partly cloudy'
+	when 'Partly Cloudy'
 		erb :partly_cloudy
-	when 'rainy'
+	when 'Rainy'
 		erb :rainy
 	else
 		erb :default
