@@ -33,9 +33,11 @@ post '/weather' do
 	@location = determine_location(@post)
 	@temp = determine_temp(@post)
 		
-	"#{@weather}"
+	puts "****************************************"
+	puts "#{@weather}"
+	puts "****************************************"
 	
-	case @weather
+	case @weather.downcase
 	when 'sunny'
 		erb :sunny
 	when 'cloudy'
