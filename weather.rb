@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'yahoo_weatherman'
 
+DEBUG_SERVICE = false
+
 def determine_weather(location)
 	client = Weatherman::Client.new
 	weather = client.lookup_by_location(location).condition['text']
@@ -33,9 +35,11 @@ post '/weather' do
 	@location = determine_location(@post)
 	@temp = determine_temp(@post)
 		
-	puts "****************************************"
-	puts "#{@weather}"
-	puts "****************************************"
+	if DEBUG_SERVICE
+		puts "****************************************"
+		puts "#{@weather}"
+		puts "****************************************"
+	end
 	
 	case @weather
 	when 'Sunny'
