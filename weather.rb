@@ -31,7 +31,7 @@ end
 
 post '/weather' do
 	location = params[:post]["location"]
-	render_weather_for( location )
+	redirect to('/weather/' + URI.escape( location ) )
 end
 
 def render_weather_for( location )
