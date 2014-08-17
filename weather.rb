@@ -62,3 +62,9 @@ def render_weather_for( location )
 		erb :default
 	end
 end
+
+get '/weather/:location' do
+	location = params[:location]
+	render_weather_for( location )
+end
+
