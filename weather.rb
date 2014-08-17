@@ -30,17 +30,21 @@ get '/' do
 end
 
 post '/weather' do
-	@post = params[:post]["location"]
-	@weather = determine_weather(@post)
-	@location = determine_location(@post)
-	@temp = determine_temp(@post)
+	location = params[:post]["location"]
+	render_weather_for( location )
+end
+
+def render_weather_for( location )
+	@weather = determine_weather(location)
+	@location = determine_location(location)
+	@temp = determine_temp(location)
 		
 	if DEBUG_SERVICE
 		puts "****************************************"
 		puts "#{@weather}"
 		puts "****************************************"
 	end
-	
+
 	case @weather
 	when 'Sunny'
 		erb :sunny
