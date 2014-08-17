@@ -52,7 +52,7 @@ post '/weather' do
 		erb :fair
 	when 'Partly Cloudy'
 		erb :partly_cloudy
-	when 'Rainy'
+	when 'Rain'
 		erb :rainy
 	else
 		erb :default
