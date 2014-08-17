@@ -14,3 +14,7 @@ div {
 #weather {
 	font-size: 200%;
 }
+
+body {
+	background-size: cover;
+}
